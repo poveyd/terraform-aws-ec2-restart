@@ -57,7 +57,7 @@ resource "aws_lambda_function" "ec2_restart_lambda" {
   role          = "${aws_iam_role.ec2_restart_lambda_role.arn}"
 
   handler          = "restart_ec2.handler"
-  source_code_hash = "${base64sha256(file("${path.module}/restart_ec2.zip"))}"
+  source_code_hash = "${base64sha256(filebase64("${path.module}/restart_ec2.zip"))}"
   runtime          = "python2.7"
 
   environment {
