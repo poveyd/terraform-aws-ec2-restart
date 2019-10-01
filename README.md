@@ -4,6 +4,8 @@
 
 This is a lightweight way of monitoring EC2 instances and restarting them if they are not running. It is a Terraform module and you just need to pass in the ids of the EC2 instances you want to monitor.
 
+The current version of the code has only been tested with Terraform v0.12.9.
+
 ## Getting started
 
 Just add the following to your [Terraform](https://www.terraform.io/) code, passing in the ids of the EC2s you'd like to monitor (in the `ec2_ids` parameter):
