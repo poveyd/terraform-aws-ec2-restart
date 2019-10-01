@@ -62,7 +62,7 @@ resource "aws_lambda_function" "ec2_restart_lambda" {
 
   environment {
     variables = {
-      IDS   = "${join("|",var.ec2_ids)}"
+      IDS   = join("|",flatten(var.ec2_ids))
       DEBUG = "${var.debug}"
     }
   }
